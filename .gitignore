@@ -1,0 +1,10 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+
+*py~
+*swp
+
+# JS dependencies
+mesa_viz/templates/external/
+mesa_viz/templates/js/external/
