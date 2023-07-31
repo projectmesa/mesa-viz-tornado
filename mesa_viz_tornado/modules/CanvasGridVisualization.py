@@ -6,7 +6,7 @@ Module for visualizing model objects in grid cells.
 """
 from collections import defaultdict
 
-from mesa.visualization.ModularVisualization import VisualizationElement
+from mesa_viz_tornado.ModularVisualization import VisualizationElement
 
 
 class CanvasGrid(VisualizationElement):

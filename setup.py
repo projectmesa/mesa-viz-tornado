@@ -70,14 +70,14 @@ ensure_js_dep(
 )
 
 # Important: when updating the D3 version, make sure to update the constant
-# D3_JS_FILE in mesa/visualization/ModularVisualization.py.
+# D3_JS_FILE in mesa_viz_tornado/ModularVisualization.py.
 d3_version = "7.4.3"
 ensure_js_dep_single(
     f"https://cdnjs.cloudflare.com/ajax/libs/d3/{d3_version}/d3.min.js",
     out_name=f"d3-{d3_version}.min.js",
 )
 # Important: Make sure to update CHART_JS_FILE in
-# mesa/visualization/ModularVisualization.py.
+# mesa_viz_tornado/ModularVisualization.py.
 chartjs_version = "3.6.1"
 ensure_js_dep_single(
     f"https://cdn.jsdelivr.net/npm/chart.js@{chartjs_version}/dist/chart.min.js",

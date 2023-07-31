@@ -107,7 +107,7 @@ import tornado.ioloop
 import tornado.web
 import tornado.websocket
 
-from mesa.visualization.UserParam import UserParam
+from mesa_viz_tornado.UserParam import UserParam
 
 # Suppress several pylint warnings for this file.
 # Attributes being defined outside of init is a Tornado feature.

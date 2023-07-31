@@ -7,7 +7,7 @@ Module for drawing live-updating bar charts using d3.js
 import json
 from typing import ClassVar
 
-from mesa.visualization.ModularVisualization import D3_JS_FILE, VisualizationElement
+from mesa_viz_tornado.ModularVisualization import D3_JS_FILE, VisualizationElement
 
 
 class BarChartModule(VisualizationElement):
