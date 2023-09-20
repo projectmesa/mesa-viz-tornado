@@ -86,7 +86,7 @@ ensure_js_dep_single(
 
 
 setup(
-    name="Mesa-Viz-Tornado",
+    name="mesa-viz-tornado",
     version=version,
     description="Tornado-based visualization framework for Mesa",
     long_description=readme,
