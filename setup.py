@@ -12,7 +12,8 @@ requires = ["tornado"]
 
 version = "0.1.0"
 
-readme = "TODO"
+with open("README.md", "r", encoding="utf-8") as fh:
+    long_description = fh.read()
 
 # Ensure JS dependencies are downloaded
 external_dir = "mesa_viz_tornado/templates/external"
