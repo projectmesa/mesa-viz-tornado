@@ -5,6 +5,24 @@ __pycache__/
 *py~
 *swp
 
+# Distribution / packaging
+.Python
+env/
+venv/
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+*.egg-info/
+.installed.cfg
+*.egg
+
 # JS dependencies
 mesa_viz/templates/external/
 mesa_viz/templates/js/external/
