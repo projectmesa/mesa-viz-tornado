@@ -90,10 +90,11 @@ setup(
     name="Mesa-Viz-Tornado",
     version=version,
     description="Tornado-based visualization framework for Mesa",
-    long_description=readme,
+    long_description=long_description,
+    long_description_content_type="text/markdown",
     author="Project Mesa Team",
     author_email="projectmesa@googlegroups.com",
-    url="https://github.com/projectmesa/mesa",
+    url="https://github.com/projectmesa/mesa-viz-tornado",
     packages=find_packages(),
     package_data={
         "mesa_viz_tornado": [
