@@ -1,10 +1,8 @@
 #!/usr/bin/env python
 import os
-import re
 import shutil
 import urllib.request
 import zipfile
-from codecs import open
 
 from setuptools import find_packages, setup
 
@@ -101,6 +99,7 @@ setup(
             "templates/*.html",
             "templates/css/*",
             "templates/js/*",
+            "templates/js/external/*",
             "templates/external/**/*",
         ],
     },
