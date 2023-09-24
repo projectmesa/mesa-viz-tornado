@@ -8,9 +8,20 @@ from setuptools import find_packages, setup
 
 requires = ["tornado"]
 
+extras_require = {
+    "dev": [
+        "black",
+        "ruff==0.0.275",
+        # "coverage",
+        # "pytest >= 4.6",
+        # "pytest-cov",
+        # "sphinx",
+    ],
+}
+
 version = "0.1.1"
 
-with open("README.md", "r", encoding="utf-8") as fh:
+with open("README.md", encoding="utf-8") as fh:
     long_description = fh.read()
 
 # Ensure JS dependencies are downloaded
@@ -105,6 +116,7 @@ setup(
     },
     include_package_data=True,
     install_requires=requires,
+    extras_require=extras_require,
     keywords="agent based modeling model ABM simulation multi-agent",
     license="Apache 2.0",
     zip_safe=False,
