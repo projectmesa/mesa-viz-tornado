@@ -29,9 +29,14 @@ const ChartModule = function (series, canvas_width, canvas_height) {
     const s = series[i];
     const new_series = {
       backgroundColor: convertColorOpacity(s.Color),
+      borderColor: s.Color,
+      label: s.Label,
       data: [],
     };
     for (const property in s){
+      if (["Color", "Label"].includes(property)) {
+        continue;
+      }
       new_series[property] = s[property];
     }
     datasets.push(new_series);
