@@ -1,5 +1,10 @@
 # Release History
 
+## 0.1.2 (2023-11-05)
+
+* add github issues and templates workflows #35
+* update ruff version in github actions #36
+* fix: Ensure ChartModule label is in lowercase and borderColor is defined #37
 
 ## 0.1.1 (2023-09-23)
 
