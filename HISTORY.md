@@ -1,5 +1,9 @@
 # Release History
 
+## 0.1.3 (2023-11-06)
+
+* fix: remove external js files #41
+
 ## 0.1.2 (2023-11-05)
 
 * add github issues and templates workflows #35

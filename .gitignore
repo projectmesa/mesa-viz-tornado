@@ -24,5 +24,5 @@ var/
 *.egg
 
 # JS dependencies
-mesa_viz/templates/external/
-mesa_viz/templates/js/external/
+mesa_viz_tornado/templates/external/
+mesa_viz_tornado/templates/js/external/
