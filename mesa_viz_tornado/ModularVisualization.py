@@ -242,6 +242,8 @@ class SocketHandler(tornado.websocket.WebSocketHandler):
             if param in self.application.user_params:
                 if is_user_param(self.application.model_kwargs[param]):
                     self.application.model_kwargs[param].value = value
+                    if self.application.dynamic:
+                        setattr(self.application.model, param, value)
                 else:
                     self.application.model_kwargs[param] = value
 
@@ -262,6 +264,7 @@ class ModularServer(tornado.web.Application):
         name="Mesa Model",
         model_params=None,
         port=None,
+        dynamic=False,
     ):
         """
         Args:
@@ -275,10 +278,13 @@ class ModularServer(tornado.web.Application):
                 3. Environment var PORT
                 4. Default value (8521)
             model_params: A dict of model parameters
+            dynamic: Whether to allow model parameters to update in real-time or not
         """
 
         self.verbose = True
         self.max_steps = 100000
+
+        self.dynamic = dynamic
 
         if port is not None:
             self.port = port
