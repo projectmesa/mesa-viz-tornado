@@ -192,10 +192,10 @@ class PageHandler(tornado.web.RequestHandler):
             port=self.application.port,
             model_name=self.application.model_name,
             description=self.application.description,
-            package_js_includes=self.application.package_js_includes,
-            package_css_includes=self.application.package_css_includes,
-            local_js_includes=self.application.local_js_includes,
-            local_css_includes=self.application.local_css_includes,
+            package_js_includes=list(self.application.package_js_includes.keys()),
+            package_css_includes=list(self.application.package_css_includes.keys()),
+            local_js_includes=list(self.application.local_js_includes.keys()),
+            local_css_includes=list(self.application.local_css_includes.keys()),
             scripts=self.application.js_code,
         )
 
@@ -314,17 +314,18 @@ class ModularServer(tornado.web.Application):
         self.visualization_elements = self._auto_convert_functions_to_TextElements(
             visualization_elements
         )
-        self.package_js_includes = set()
-        self.package_css_includes = set()
-        self.local_js_includes = set()
-        self.local_css_includes = set()
+        # Ensure uniqueness and preverse order with dicts
+        self.package_js_includes = {}
+        self.package_css_includes = {}
+        self.local_js_includes = {}
+        self.local_css_includes = {}
         self.js_code = []
         for element in self.visualization_elements:
             for include_file in element.package_includes:
                 if self._is_stylesheet(include_file):
-                    self.package_css_includes.add(include_file)
+                    self.package_css_includes[include_file] = None
                 else:
-                    self.package_js_includes.add(include_file)
+                    self.package_js_includes[include_file] = None
             if element.local_includes:
                 mapped_local_dir = element.__class__.__name__
                 element_file_handler = (
@@ -336,9 +337,9 @@ class ModularServer(tornado.web.Application):
                 for include_file in element.local_includes:
                     include_file_path = f"{mapped_local_dir}/{include_file}"
                     if self._is_stylesheet(include_file):
-                        self.local_css_includes.add(include_file_path)
+                        self.local_css_includes[include_file_path] = None
                     else:
-                        self.local_js_includes.add(include_file_path)
+                        self.local_js_includes[include_file_path] = None
             self.js_code.append(element.js_code)
 
         # Initializing the model
