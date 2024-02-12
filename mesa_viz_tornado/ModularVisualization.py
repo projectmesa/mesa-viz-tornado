@@ -262,6 +262,7 @@ class ModularServer(tornado.web.Application):
         name="Mesa Model",
         model_params=None,
         port=None,
+        verbose=True
     ):
         """
         Args:
@@ -277,7 +278,7 @@ class ModularServer(tornado.web.Application):
             model_params: A dict of model parameters
         """
 
-        self.verbose = True
+        self.verbose = verbose
         self.max_steps = 100000
 
         if port is not None:
