@@ -1,5 +1,5 @@
 """
-Pie Chart Module
+Bar Chart Module
 ============
 
 Module for drawing live-updating bar charts using d3.js
